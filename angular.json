@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MyApp": {
+    "Mario": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MyApp:build"
+            "browserTarget": "Mario:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MyApp:build:production"
+              "browserTarget": "Mario:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MyApp:build"
+            "browserTarget": "Mario:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "MyApp-e2e": {
+    "Mario-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MyApp:serve"
+            "devServerTarget": "Mario:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MyApp:serve:production"
+              "devServerTarget": "Mario:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "MyApp"
+  "defaultProject": "Mario"
 }
