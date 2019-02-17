@@ -160,7 +160,7 @@ export class AppComponent implements AfterViewInit {
     for (const item of food) {
       this._arr[item.row][item.col] = {
         value: "mushroom",
-        image: "../assets/mushroom.jpg"
+        image: "../Mario/assets/mushroom.jpg"
       };
 
     }
