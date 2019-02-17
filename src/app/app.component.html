@@ -1,0 +1,60 @@
+<div class="mario">
+  <div class="mario__header">
+    <div class="mario__header-sub-header">
+      <label>Enter the no of rows</label>
+      <input type="number"
+             min="0"
+             [(ngModel)]="_rowNum"
+      >
+    </div>
+    <div class="mario__header-sub-header">
+      <label>Enter the no of columns</label>
+      <input type="number"
+             min="0"
+             [(ngModel)]="_colNum"
+      >
+    </div>
+    <div class="mario__header-sub-header-button">
+      <button (click)="_updateGrid()">Change Grid</button>
+    </div>
+  </div>
+
+  <div class="mario__result"
+       *ngIf="_rows?.length && _columns?.length">
+    <div class="mario__result-wrapper">
+      <div class="mario__result-wrapper-1"> CellTraversed: {{_cellTraversed}}</div>
+      <div class="mario__result-wrapper-2"> eaten: {{_totalEaten}}</div>
+    </div>
+    <div *ngIf="(_totalEaten !==0) && (_totalFood === _totalEaten)"
+         class="mario__result-3">
+      Congrats!! Mario Ate All. Mushrooms.
+    </div>
+  </div>
+
+  <div class="mario__table-wrapper">
+    <div *ngIf="_rows?.length && _columns?.length">
+      <div *ngFor="let i of _rows;let row = index;"
+           class="mario__table"
+      >
+        <div *ngFor="let j of _columns;let col = index;">
+          <div [id]="'grid_' + row + '_' + col "
+               class="mario__table-list">
+          <span *ngIf="!_arr[row][col]?.image">
+            {{_arr[row][col]}}
+          </span>
+            <ng-container *ngIf="_arr[row][col]?.image">
+              <img [src]="_arr[row][col]?.image"
+                   class="mario__table-list-image"
+              >
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
